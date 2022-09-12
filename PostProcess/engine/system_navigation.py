@@ -22,11 +22,11 @@ class NavSys:
             # update measurement, measurement time
             self._nav_ins.f_ib_b = self._acc_meas.iloc[i][['MeasurementX', 'MeasurementY', 'MeasurementZ']]
             self._nav_ins.omega_ib_b = self._gyr_meas.iloc[i][['MeasurementX', 'MeasurementY', 'MeasurementZ']]
-            self._nav_ins._utc_time_millis_a_ = self._acc_meas['utcTimeMillis'].iloc[i]
-            self._nav_ins._utc_time_millis_g_ = self._gyr_meas['utcTimeMillis'].iloc[i]
-            if i == 0 :
-                self._nav_ins._last_utc_time_millis_a_ = self._acc_meas['utcTimeMillis'].iloc[i]
-                self._nav_ins._last_utc_time_millis_g_ = self._gyr_meas['utcTimeMillis'].iloc[i]
+            self._nav_ins._utc_time_millis_a = self._acc_meas['utcTimeMillis'].iloc[i]
+            self._nav_ins._utc_time_millis_g = self._gyr_meas['utcTimeMillis'].iloc[i]
+            if i == 0:
+                self._nav_ins._last_utc_time_millis_a = self._acc_meas['utcTimeMillis'].iloc[i]
+                self._nav_ins._last_utc_time_millis_g = self._gyr_meas['utcTimeMillis'].iloc[i]
 
             # update attitude
             self._nav_ins.update_attitude()
